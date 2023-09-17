@@ -1,0 +1,137 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KAZI</title>
+        <link rel="stylesheet" href="{% static 'jobs/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'jobs/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'jobs/remixicon/remixicon.css' %}">
+     </head>
+<body class="bg-white">
+ 
+  <nav class="sticky-top ms-1 me-1 navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand ms-3 text-danger" href="{% url 'jobs:home' %}">KAZI</a>
+    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      <div class="d-flex ms-2">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item mt-2 active">
+            <a class="nav-link ms-2" href="{% url 'jobs:index_page' %}">Home</a>
+          </li>
+          <li class="nav-item mt-2">
+            <a class="nav-link ms-2" href="{% url 'jobs:home' %}">All-Jobs</a>
+          </li>
+          <li class="nav-item mt-2">
+            <a class="nav-link ms-2" href='https://wibotec.github.io' target="_blank">Developer Info</a>
+          </li>
+          
+          <!-- Button trigger modal -->
+          <li class="ms-1">
+            {% if user.is_authenticated %}
+            <div class="text-end" >
+               <a class="nav-link text-secondary" href="{% url 'verifieds:logout' %}">                
+                <button type="button" class="btn text-white btn-secondary me-2">Logout</button>
+               </a>
+            </div>
+            {% else %}
+              <div class="text-end mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <button type="button" class="btn text-white btn-secondary me-2">Login</button>
+              </div>
+            {% endif %}
+          </li>
+              
+        </ul>
+      </div>
+      
+      <div class="ms-2 float-lg-end me-2">
+        <form action="{% url 'jobs:search' %}" method="post" class="d-flex form-inline my-2 my-lg-0">
+          {% csrf_token %}
+          <input type="search" name="searched" class="form-control form-control-dark" placeholder="Search...">
+          <button type="submit" class="btn btn-secondary ms-1">Search</button>
+        </form>
+      </div>
+    </div>
+</nav>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog border-bottom langi">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="{% url 'verifieds:valid_member' %}">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-start">Username</label>
+              <input type="text" name="username" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" required>
+              </div>
+              <button type="submit" class="btn btn-secondary float-end">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-lg-6 pt-2 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Easy To Get Your Dream Job With BoTEcH </h1>
+          <ul class="text-decoration-none">
+            <li><i class="ri-check-line"></i> From trusted sources</li>
+            <li><i class="ri-check-line"></i> No job scams</li>
+            <li><i class="ri-check-line"></i> Do not pay money to get a job</li>
+          </ul>
+          <div class="mt-3">
+            <a href="{% url 'jobs:home' %}" class="text-decoration-none">
+              <button type="submit" class="btn btn-secondary mb-4 d-flex justify-content-start ms-2">View Jobs</button>
+            </a>
+            
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 mt-4 hero-img">
+          <img src="{% static 'jobs/img/hero-img.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer class="mt-5 mb-3">
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>William</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a class="rangi text-decoration-none" href="https://botechnology.github.io">BoTEcH</a><br>
+          contact: <span class="rangi">074 5656 712</span> 
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  
+
+    
+
+<script src="{% static 'jobs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'jobs/bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'jobs/bootstrap/js/main.js' %}"></script>
+</body>
+</html>

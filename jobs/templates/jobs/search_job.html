@@ -1,0 +1,40 @@
+{% extends 'jobs/base.html' %}
+{% load static %}
+{% block content %}
+
+    {% if searched %}
+    <div class="d-flex justify-content-center ms-1 me-1 mt-3 alert alert-warning alert-dismissible fade show" role="alert">
+        You searched for {{searched}}.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+
+    <div class="ms-1 me-1">
+        <div class="row">
+          <div class="col-lg-8">
+            {% for jobs in jobs %}
+                <div class="card">
+                  <h2 class="fs-4">Title: {{jobs.title}}</h2>
+                  <h3 class="fs-5">Company: {{jobs.company}}</h3>
+                  <h3 class="fs-6"><small> Category: {{jobs.category}}</small></h3>
+                  <h3 class="fs-6"><small> Location: {{jobs.location}}</small></h3>
+                  <h4 class="fs-6"><small>Date published: {{jobs.publish}}</small></h4>
+                  <p class="link fs-6"><a href="{% url 'jobs:detail' jobs.id %}">view details &raquo</a></p>
+                  <h4 class="expire fs-6"><small>Expiration date: {{jobs.expire}}</small></h4>
+                </div>
+            {% endfor %}
+          </div>
+              
+          <div class="col-lg-4">
+              <div class="card">
+                <h3>Popular Post</h3>
+              </div>
+              <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+              </div>
+          </div>
+        </div>
+      </div>
+{% endblock content %}

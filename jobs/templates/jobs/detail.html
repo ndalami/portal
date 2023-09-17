@@ -1,0 +1,33 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+<div class="ms-1 me-1">
+    <div class="row">
+      <div class="col-lg-8">
+        
+            <div class="card">
+              <h2 class="fs-4">Title: {{job.title}}</h2>
+              <h3 class="fs-5">Company: {{job.company}}</h3>
+              <h3 class="fs-6"><small> Category: {{job.category}}</small></h3>
+              <h3 class="fs-6"><small> Location: {{job.location}}</small></h3>
+              <p class="fs-6 word">{{job.body|linebreaksbr}}</p>
+              <ul>
+                <li  class="link fs-6 disabled">Apply via: <a href="#">williambundala54@gmail.com</a> </li>
+              </ul>
+            </div>
+
+      </div>
+  
+      <div class="col-lg-4">
+          <div class="card">
+            <h3>Popular Post</h3>
+          </div>
+          <div class="card">
+            <h3>Follow Me</h3>
+            <p>Some text..</p>
+          </div>
+      </div>
+    </div>
+  </div>
+    
+{% endblock content %}

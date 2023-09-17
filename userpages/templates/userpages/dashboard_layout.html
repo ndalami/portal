@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>KAZI</title>
+  <link rel="stylesheet" href="{% static 'jobs/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'jobs/bootstrap/css/bootstrap.min.css' %}">
+  <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+</head>
+  <body class="bg-white">
+{% if user.is_authenticated %}
+
+<header class="navbar navbar-light sticky-top flex-md-nowrap p-3 bg-light border-bottom border-muted">
+  <a class="navbar-brand col-md-3 col-lg-2 text-danger ps-1  " href="#">KAZI</a>
+  <button class="navbar-toggler me-2 position-absolute top-50 end-0 translate-middle-y d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon rangi"></span>
+  </button>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="navbarSupportedContent" class=" col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky sticky-left pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active text-secondary" aria-current="page" href="{% url 'userpages:home' %}">
+              <span data-feather="home"></span>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="{% url 'userpages:category' %}">
+              <span data-feather="file"></span>
+              Category
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="{% url 'userpages:job' %}">
+              <span data-feather="shopping-cart"></span>
+              Job
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="{% url 'jobs:index_page' %}">
+              <span data-feather="users"></span>
+              View Site
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="ms-3 text-secondary btn btn-secondary text-white mb-2 px-3" href="{% url 'verifieds:logout' %}">
+              <span data-feather="users"></span>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="fs-3 text-secondary">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <p>Welcome <span class="text-danger">{{ user.username }}</span></p>
+          </div>
+        </div>
+      </div>
+
+      {% block content %}
+
+
+      {% endblock content %}
+
+      <canvas class="my-4" id="myChart" width="900" height="1"></canvas>
+    </main>
+  </div>
+</div>
+
+
+<script src="{% static 'jobs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'jobs/bootstrap/js/bootstrap.bundle.js' %}"></script>
+{% endif %}
+  </body>
+</html>

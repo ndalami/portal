@@ -1,0 +1,332 @@
+/* Add a gray background color with some padding */
+body {
+    font-family: Arial !important;
+    padding: 20px;
+    background: #dfdede !important;
+    overflow-x: hidden;
+    width: 100%;
+
+}
+
+
+/* Add a card effect for articles */
+.card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+     border-bottom: 2px solid #434175 !important;
+     
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: white;
+    margin-top: 20px;
+}
+
+.appear {
+    color: rgb(78, 162, 174);
+}
+
+.sear{
+    margin: auto;
+}
+
+.appe{
+    background-color: white;
+    margin-bottom: 20px;
+    height: 400px;
+    border-bottom: solid cyan;
+    
+}
+
+.head{
+    border-bottom: solid cyan;
+    background-color: white;
+}
+
+.expire{
+    color: red;
+}
+
+.link a{
+    text-decoration: none;
+    font-size: 17px; 
+    color: #434175;; 
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444444;
+    cursor: pointer;
+    padding: 8px;
+    width: 90%;
+    margin-right: 13px;
+    margin-left: 10px;
+    text-align: left;
+    border: none;
+    text-decoration: none;
+    outline: none;
+}
+
+.pagination a{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.word p{
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+    
+}
+.linkTodetail a{
+    text-decoration: none;
+}
+
+.category{
+    padding-top: 15px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.word p{
+   overflow: hidden;
+   display: inline-block;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+        display: block;
+    }
+}
+
+
+/* copied
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #5a5af3;
+  }
+  
+  a:hover {
+    color: #2a2af0;
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    border-bottom: 2px solid white;
+  }
+  
+  #hero .container {
+    padding-top: 80px;
+  }
+  
+  #hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 56px;
+    color: #434175;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #hero h2 {
+    margin: 10px 0 0 0;
+    font-size: 20px;
+  }
+  
+  #hero ul {
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  #hero ul li {
+    padding: 10px 0 0 28px;
+    position: relative;
+  }
+  
+  #hero ul i {
+    left: 0;
+    top: 7px;
+    position: absolute;
+    font-size: 20px;
+    color: #5a5af3;
+  }
+  
+  #hero .btn-get-started,
+  #hero .btn-get-quote {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 8px 30px 9px 30px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    transition: 0.5s;
+    border-radius: 50px;
+  }
+  
+  #hero .btn-get-started {
+    background: #5a5af3;
+    color: #fff;
+    border: 2px solid #5a5af3;
+    margin-right: 10px;
+  }
+  
+  #hero .btn-get-started:hover {
+    background: #7272f5;
+    border-color: #7272f5;
+  }
+  
+  #hero .btn-get-quote {
+    color: #5a5af3;
+    border: 2px solid #5a5af3;
+  }
+  
+  #hero .btn-get-quote:hover {
+    background: #5a5af3;
+    color: #fff;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    #hero .hero-img {
+      text-align: center;
+    }
+  
+    #hero .hero-img img {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  
+    #hero .hero-img img {
+      width: 70%;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    #hero {
+      text-align: center;
+    }
+  
+    #hero ul {
+      text-align: left;
+      font-size: 14px;
+    }
+  
+    #hero .hero-img img {
+      width: 80%;
+    }
+  
+    #hero .btn-get-started,
+    #hero .btn-get-quote {
+      padding-left: 18px;
+      padding-right: 18px;
+      font-size: 14px;
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 60px 0;
+  }
+  
+  .section-bg {
+    background-color: #eeeef5;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #434175;
+  }
+  
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #5a5af3;
+    bottom: 0;
+    left: calc(50% - 25px);
+  }
+  
+  .section-title p {
+    margin-bottom: 0;
+  }
+
+  .rangi{
+    color: #434175;
+  }
+
+  .langi{
+    border-bottom:#5a5af3;
+    border-radius: 10px;
+  }

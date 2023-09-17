@@ -1,0 +1,50 @@
+{% extends 'userpages/dashboard_layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="mt-5 ms-1 me-1">
+ 
+    <form class="row g-3" method="POST" action="">
+        {% csrf_token %}
+    
+          <div class="col-md-6">
+            {{form.title}}
+          </div>
+          <div class="col-md-6">
+            {{form.category}}
+          </div>
+        
+          <div class="col-md-6">
+            {{form.company}}
+          </div>
+
+          <div class="col-md-6">
+            {{form.location}}
+          </div>
+        
+          <div class="">
+            {{form.body}}
+          </div>
+
+          <div class="col-md-6">
+            <label for="">Publication date:</label>
+            {{form.publish}}
+          </div>
+
+          <div class="col-md-6">
+            <label for="">Expiration date:</label>
+            {{form.expire}}
+          </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+          <button class="btn btn-secondary" type="submit">Submit</button>
+          <a href="{% url 'userpages:job' %}" class="">
+            <button class="btn btn-secondary" type="button">Jobs List</button>
+          </a>
+        </div>
+    </form>   
+  
+</div>
+
+{% endblock content %}

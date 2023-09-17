@@ -1,0 +1,24 @@
+{% extends 'userpages/dashboard_layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="mt-5 ms-1 me-1">
+ Update Category...
+ <div class="mt-5">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="mb-4">
+         {{form}}
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+          <button class="btn btn-secondary" type="submit">Update</button>
+          <button class="btn btn-secondary" type="button"> <a class="text-decoration-none text-white" href="{% url 'userpages:category' %}">Cancel</a> </button>
+        </div>
+    </form>   
+ </div>
+  
+</div>
+
+{% endblock content %}
